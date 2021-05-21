@@ -1,9 +1,7 @@
 %% demo.m
 %
-% Shows a couple of sample registrations using 
 % ICP - Iterative Closest Point
-%
-% Jakob Wilm and Martin Kjer, Technical University of Denmark, 2012
+
 
 m = 3; % width of grid
 n = 6700; % number of points
