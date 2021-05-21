@@ -98,7 +98,12 @@ title(['Total elapsed time: ' num2str(t(end),2) ' s']);
 [Ricp Ticp ER t] = icp(M, D, 15, 'Matching', 'kDtree', 'Extrapolation', true);
 
 % Transform data-matrix using ICP result
-Dicp = Ricp * D + repmat(Ticp, 1, n);
+
+test0 = Ricp * D;
+si = size(test0); %the bigger one, if ydk the sizes of them, then must check if test0 or test1 is bigger
+test1 = repmat(Ticp, 1, si(2));
+%Dicp = Ricp * D + repmat(Ticp, 1, n);
+Dicp = test0 + test1;
 
 % Plot model points blue and transformed points red
 figure;
@@ -138,7 +143,13 @@ Dp = D(:,X>=0);
 [Ricp Ticp ER t] = icp(Mp, Dp, 50, 'EdgeRejection', true, 'Boundary', bound, 'Matching', 'kDtree');
 
 % Transform data-matrix using ICP result
-Dicp = Ricp * Dp + repmat(Ticp, 1, size(Dp,2));
+
+
+test0 = Ricp * Dp;
+si = size(test0); %the bigger one, if ydk the sizes of them, then must check if test0 or test1 is bigger
+test1 = repmat(Ticp, 1, si(2));
+%Dicp = Ricp * Dp + repmat(Ticp, 1, size(Dp,2));
+Dicp = test0 + test1;
 
 % Plot model points blue and transformed points red
 figure;
