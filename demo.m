@@ -2,6 +2,8 @@
 %
 % ICP - Iterative Closest Point
 
+%Instructions: In order to accomodate new file types, change the value of
+%variables m and n as needed
 
 m = 3; % width of grid
 n = 6700; % number of points
