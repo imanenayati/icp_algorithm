@@ -89,7 +89,7 @@ function [TR, TT, ER, t] = icp(q,p,varargin)
 %       Reject a given percentage of the worst point pairs, based on their
 %       Euclidean distance.
 %
-% Martin Kjer and Jakob Wilm, Technical University of Denmark, 2012
+% 
 
 % Use the inputParser class to validate input arguments.
 inp = inputParser;
